@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>170</x>
+      <y>0</y>
+      <w>240</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>Książka adresowa
+---------------------------------------------------------------------------------------------------------------
+- menadzerUzytkownika : MenadzerUzytkownika
+----------------------------------------------------------------------------------------------------------------
+KsiazkaAdresowa()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>650</y>
+      <w>180</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>Użytkownik
+-----------------------------------------------
+id : int 
+login : string
+haslo : string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>160</y>
+      <w>530</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>Menadżer użytkownika
+------------------------------------------------------
+- idZalogowanegoUzytkownika : int
+- uzytkownicy : vector &lt;Uzytkownik&gt;
+------------------------------------------------------------
++ wypiszWszystkichUzytkownikow() : void
++ rejestracjaUzytkownika() : void
++ logowanieUzytkownika() : int
++ wylogowanie() : void
++ zmianaHaslaZalogowanegoUzytkownika() : void
++ wczytajUzytkownikowZPliku() : void
+- podajDaneNowegoUzytkownika() : Uzytkownik
+- pobierzIdNowegoUzytkownika() : int
+- czyIstniejeLogin() : bool
+- wczytajLinie() : string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>30</x>
+      <y>450</y>
+      <w>540</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>Plik z użytkownikami
+-------------------------------------------------------
+- nazwaPlikuZUzytkownikami : string
+- plikTekstowy : fstream
+------------------------------------------------------------------------------
++ PlikZUzytkownikami()
++ dopiszUzytkownikaDoPliku() : void
++ wczytajUzytkownikowZPliku() : vector &lt;Uzytkownik&gt;
+- czyPlikJestPusty : bool
+- zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami() : string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>260</x>
+      <y>640</y>
+      <w>230</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>Metody pomocnicze
+-------------------------------------------------------
++ konwerjsaIntNaString() : string
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
