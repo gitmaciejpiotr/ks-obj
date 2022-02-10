@@ -9,13 +9,17 @@
 
 #include "Uzytkownik.h"
 #include "PlikZUzytkownikami.h"
+#include "MetodyPomocnicze.h"
+#include "MenadzerAdresata.h"
 
 using namespace std;
 
 class MenadzerUzytkownika
 {
-    int idZalogowanegoUzytkownika;
+    static int idZalogowanegoUzytkownika;
     PlikZUzytkownikami plikZUzytkownikami;
+    MenadzerAdresata menadzerAdresata;
+    MetodyPomocnicze metodyPomocnicze;
     vector <Uzytkownik> uzytkownicy;
 
     Uzytkownik podajDaneNowegoUzytkownika();
@@ -24,10 +28,14 @@ class MenadzerUzytkownika
     string wczytajLinie();
 
 public:
-    MenadzerUzytkownika(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami){};
+    MenadzerUzytkownika(int IDUZYTKOWNIKA = idZalogowanegoUzytkownika) : menadzerAdresata(IDUZYTKOWNIKA){};
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
     void wczytajUzytkownikowZPliku();
+    int logowanieUzytkownika();
+    int dodajAdresata(int idZalogowanegoUzytkownika);
+    void zmianaHaslaZalogowanegoUzytkownika();
+    void zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik> uzytkownicy);
 };
 
 #endif
