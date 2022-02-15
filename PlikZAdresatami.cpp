@@ -1,11 +1,6 @@
 #include "PlikZAdresatami.h"
 
 
-PlikZAdresatami::PlikZAdresatami()
-{
-    nazwaPlikuZAdresatami = "Adresaci.txt";
-}
-
 string PlikZAdresatami::konwerjsaIntNaString(int liczba)
 {
     metodyPomocnicze.konwerjsaIntNaString(liczba);
@@ -141,18 +136,18 @@ int PlikZAdresatami::konwersjaStringNaInt(string liczba)
 int PlikZAdresatami::pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami)
 {
     int pozycjaRozpoczeciaIdAdresata = 0;
-    int idAdresata = konwersjaStringNaInt(pobierzLiczbe(daneJednegoAdresataOddzielonePionowymiKreskami, pozycjaRozpoczeciaIdAdresata));
+    int idAdresata = metodyPomocnicze.konwersjaStringNaInt(metodyPomocnicze.pobierzLiczbe(daneJednegoAdresataOddzielonePionowymiKreskami, pozycjaRozpoczeciaIdAdresata));
     return idAdresata;
 }
 
 
-int PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int &idZalogowanegoUzytkownika, vector <Adresat> &adresaci)
+int PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku()
 {
+    adresaci.clear();
     Adresat adresat;
     int idOstatniegoAdresata = 0;
     string daneJednegoAdresataOddzielonePionowymiKreskami = "";
     string daneOstaniegoAdresataWPliku = "";
-    fstream plikTekstowy;
     plikTekstowy.open(nazwaPlikuZAdresatami.c_str(), ios::in);
 
     if (plikTekstowy.good() == true)
@@ -178,13 +173,14 @@ int PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int &idZalogo
         return idOstatniegoAdresata;
     }
     else
+
         return 0;
 }
 
 int PlikZAdresatami::pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami)
 {
     int pozycjaRozpoczeciaIdUzytkownika = daneJednegoAdresataOddzielonePionowymiKreskami.find_first_of('|') + 1;
-    int idUzytkownika = konwersjaStringNaInt(pobierzLiczbe(daneJednegoAdresataOddzielonePionowymiKreskami, pozycjaRozpoczeciaIdUzytkownika));
+    int idUzytkownika = metodyPomocnicze.konwersjaStringNaInt(metodyPomocnicze.pobierzLiczbe(daneJednegoAdresataOddzielonePionowymiKreskami, pozycjaRozpoczeciaIdUzytkownika));
 
     return idUzytkownika;
 }

@@ -10,8 +10,12 @@ int main()
     int idZalogowanegoUzytkownika;
 
     ksiazkaAdresowa.rejestracjaUzytkownika();
-    ksiazkaAdresowa.logowanieUzytkownika();
-    //ksiazkaAdresowa.dodajAdresata(idZalogowanegoUzytkownika);
+    idZalogowanegoUzytkownika = ksiazkaAdresowa.logowanieUzytkownika(idZalogowanegoUzytkownika);
+
+    KsiazkaAdresowa ksiazkaAdresowa2(idZalogowanegoUzytkownika);
+    ksiazkaAdresowa2.dodajAdresata();
+    ksiazkaAdresowa2.wyswietlWszystkichAdresatow();
+
     ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
 
     return 0;

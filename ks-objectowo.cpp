@@ -10,9 +10,9 @@ void KsiazkaAdresowa::wypiszWszystkichUzytkownikow()
     menadzerUzytkownika.wypiszWszystkichUzytkownikow();
 }
 
-int KsiazkaAdresowa::logowanieUzytkownika()
+int KsiazkaAdresowa::logowanieUzytkownika(int idZalogowanegoUzytkownika)
 {
-    menadzerUzytkownika.logowanieUzytkownika();
+    menadzerUzytkownika.logowanieUzytkownika(idZalogowanegoUzytkownika);
 }
 
 void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika()
@@ -20,7 +20,12 @@ void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika()
     menadzerUzytkownika.zmianaHaslaZalogowanegoUzytkownika();
 }
 
-KsiazkaAdresowa::KsiazkaAdresowa()
+int KsiazkaAdresowa::dodajAdresata()
 {
-    menadzerUzytkownika.wczytajUzytkownikowZPliku();
-};
+    menadzerUzytkownika.dodajAdresata();
+}
+
+void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
+{
+    menadzerUzytkownika.wyswietlWszystkichAdresatow();
+}

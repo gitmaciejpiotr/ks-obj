@@ -4,22 +4,26 @@
 #include <iostream>
 
 #include "MenadzerUzytkownika.h"
-#include "MenadzerAdresata.h"
 
 using namespace std;
 
 class KsiazkaAdresowa
 {
     MenadzerUzytkownika menadzerUzytkownika;
-    MenadzerAdresata menadzerAdresata;
+    int idZalogowanegoUzytkownika;
+    vector <Adresat> adresaci;
 
 public:
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
-    int logowanieUzytkownika();
-    int dodajAdresata(int idZalogowanegoUzytkownika);
+    int logowanieUzytkownika(int idZalogowanegoUzytkownika);
+    int dodajAdresata();
+    void wyswietlWszystkichAdresatow();
     void zmianaHaslaZalogowanegoUzytkownika();
-    KsiazkaAdresowa();
+    KsiazkaAdresowa(int idZalogowanegoUzytkownika = 0) : menadzerUzytkownika(idZalogowanegoUzytkownika)
+    {
+        menadzerUzytkownika.wczytajUzytkownikowZPliku();
+    }
 };
 
 #endif

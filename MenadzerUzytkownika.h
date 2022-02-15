@@ -16,7 +16,7 @@ using namespace std;
 
 class MenadzerUzytkownika
 {
-    static int idZalogowanegoUzytkownika;
+    int idZalogowanegoUzytkownika;
     PlikZUzytkownikami plikZUzytkownikami;
     MenadzerAdresata menadzerAdresata;
     MetodyPomocnicze metodyPomocnicze;
@@ -28,14 +28,16 @@ class MenadzerUzytkownika
     string wczytajLinie();
 
 public:
-    MenadzerUzytkownika(int IDUZYTKOWNIKA = idZalogowanegoUzytkownika) : menadzerAdresata(IDUZYTKOWNIKA){};
+
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
     void wczytajUzytkownikowZPliku();
-    int logowanieUzytkownika();
-    int dodajAdresata(int idZalogowanegoUzytkownika);
+    int logowanieUzytkownika(int idZalogowanegoUzytkownika);
     void zmianaHaslaZalogowanegoUzytkownika();
     void zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik> uzytkownicy);
+    int dodajAdresata();
+    void wyswietlWszystkichAdresatow();
+    MenadzerUzytkownika(int idUzytkownika) : idZalogowanegoUzytkownika(idUzytkownika), menadzerAdresata(idUzytkownika){}
 };
 
 #endif

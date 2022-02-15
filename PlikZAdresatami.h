@@ -30,12 +30,15 @@ class PlikZAdresatami
 
 public:
 
-    PlikZAdresatami();
+    vector <Adresat> adresaci;
+    PlikZAdresatami(int idUzytkownika) : idZalogowanegoUzytkownika(idUzytkownika)
+    {
+        nazwaPlikuZAdresatami = "Adresaci.txt";
+    }
     int pobierzZPlikuIdOstatniegoAdresata();
     void dopiszAdresataDoPliku(Adresat adresat);
-    int wczytajAdresatowZalogowanegoUzytkownikaZPliku(int &idZalogowanegoUzytkownika, vector <Adresat> &adresaci);
+    int wczytajAdresatowZalogowanegoUzytkownikaZPliku();
     int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
-
 };
 
 #endif

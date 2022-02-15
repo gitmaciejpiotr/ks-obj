@@ -27,14 +27,20 @@ class MenadzerAdresata
 
 public:
 
-    MenadzerAdresata(int IDUZYTKOWNIKA) : idZalogowanegoUzytkownika(IDUZYTKOWNIKA){};
     void wyswietlWszystkichAdresatow();
-    void wyswietlDaneAdresata();
-    Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika);
+    void wyswietlDaneAdresata(int i);
+    Adresat podajDaneNowegoAdresata();
     Adresat pobierzDaneAdresata();
-    int dodajAdresata(int idZalogowanegoUzytkownika);
+    int dodajAdresata();
     int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami();
-    int wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika, vector <Adresat> adresaci);
+    int wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    MenadzerAdresata(int idUzytkownika) : idZalogowanegoUzytkownika(idUzytkownika), plikZAdresatami(idUzytkownika)
+    {
+        if (idZalogowanegoUzytkownika > 0)
+        {
+            idOstatniegoAdresata = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+        }
+    }
 };
 
 #endif

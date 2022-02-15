@@ -73,7 +73,7 @@ void MenadzerUzytkownika::wczytajUzytkownikowZPliku()
     uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
 }
 
-int MenadzerUzytkownika::logowanieUzytkownika()
+int MenadzerUzytkownika::logowanieUzytkownika(int idZalogowanegoUzytkownika)
 {
     Uzytkownik uzytkownik;
     string login = "", haslo = "";
@@ -94,7 +94,6 @@ int MenadzerUzytkownika::logowanieUzytkownika()
                 if (itr -> pobierzHaslo() == haslo)
                 {
                     cout << endl << "Zalogowales sie." << endl << endl;
-                    system("pause");
                     return idZalogowanegoUzytkownika = itr -> pobierzID();
                 }
             }
@@ -132,7 +131,12 @@ void MenadzerUzytkownika::zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik
     plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
 }
 
-int MenadzerUzytkownika::dodajAdresata(int idZalogowanegoUzytkownika)
+int MenadzerUzytkownika::dodajAdresata()
 {
-    menadzerAdresata.dodajAdresata(idZalogowanegoUzytkownika);
+    menadzerAdresata.dodajAdresata();
+}
+
+void MenadzerUzytkownika::wyswietlWszystkichAdresatow()
+{
+    menadzerAdresata.wyswietlWszystkichAdresatow();
 }
