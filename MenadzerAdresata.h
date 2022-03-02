@@ -7,7 +7,7 @@
 #include <fstream>
 #include <sstream>
 
-//#include "Adresat.h"
+#include "Adresat.h"
 #include "PlikZAdresatami.h"
 //#include "MetodyPomocnicze.h"
 
@@ -15,8 +15,7 @@ using namespace std;
 
 class MenadzerAdresata
 {
-    int idZalogowanegoUzytkownika;
-    int idOstatniegoAdresata;
+    const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
     Adresat adresat;
     PlikZAdresatami plikZAdresatami;
     MetodyPomocnicze metodyPomocnicze;
@@ -31,15 +30,11 @@ public:
     void wyswietlDaneAdresata(int i);
     Adresat podajDaneNowegoAdresata();
     Adresat pobierzDaneAdresata();
-    int dodajAdresata();
+    void dodajAdresata();
     int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami();
-    int wczytajAdresatowZalogowanegoUzytkownikaZPliku();
-    MenadzerAdresata(int idUzytkownika) : idZalogowanegoUzytkownika(idUzytkownika), plikZAdresatami(idUzytkownika)
+    MenadzerAdresata(int idZalogowanegoUzytkownika = 0) : ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika)
     {
-        if (idZalogowanegoUzytkownika > 0)
-        {
-            idOstatniegoAdresata = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
-        }
+        adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
     }
 };
 

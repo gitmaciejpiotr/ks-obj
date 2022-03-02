@@ -1,22 +1,23 @@
 # depslib dependency file v1.0
-1644587086 source:c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\ks-objectowo.cpp
+1646217089 source:c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\ks-objectowo.cpp
 	"ks-objectowo.h"
 
-1644587086 source:c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\main.cpp
+1646217121 source:c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\main.cpp
 	<iostream>
 	"ks-objectowo.h"
 
-1643726698 source:c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\uzytkownik.cpp
+1644937170 source:c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\uzytkownik.cpp
 	"Uzytkownik.h"
 
-1644587086 c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\ks-objectowo.h
+1646216732 c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\ks-objectowo.h
 	<iostream>
 	"MenadzerUzytkownika.h"
+	"MenadzerAdresata.h"
 
 1643817605 c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\uzytkownik.h
 	<iostream>
 
-1644587086 c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\menadzeruzytkownika.h
+1646217089 c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\menadzeruzytkownika.h
 	<iostream>
 	<vector>
 	<windows.h>
@@ -25,17 +26,16 @@
 	"Uzytkownik.h"
 	"PlikZUzytkownikami.h"
 	"MetodyPomocnicze.h"
-	"MenadzerAdresata.h"
 
-1644495010 source:c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\metodypomocnicze.cpp
+1646149079 source:c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\metodypomocnicze.cpp
 	"MetodyPomocnicze.h"
 
-1644495010 c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\metodypomocnicze.h
+1646149079 c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\metodypomocnicze.h
 	<iostream>
 	<sstream>
 	<bits/stdc++.h>
 
-1644495010 c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\plikzuzytkownikami.h
+1645880554 c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\plikzuzytkownikami.h
 	<vector>
 	<windows.h>
 	<fstream>
@@ -43,22 +43,22 @@
 	"Uzytkownik.h"
 	"MetodyPomocnicze.h"
 
-1644495010 source:c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\plikzuzytkownikami.cpp
+1645880578 source:c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\plikzuzytkownikami.cpp
 	"PlikZUzytkownikami.h"
 
-1644918877 source:c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\menadzeruzytkownika.cpp
+1646217158 source:c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\menadzeruzytkownika.cpp
 	"MenadzerUzytkownika.h"
 
 1644495010 source:c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\adresat.cpp
 	"Adresat.h"
 
-1644495010 c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\adresat.h
+1646146892 c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\adresat.h
 	<iostream>
 
-1644918753 source:c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\plikzadresatami.cpp
+1646218305 source:c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\plikzadresatami.cpp
 	"PlikZAdresatami.h"
 
-1644587119 c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\plikzadresatami.h
+1646218640 c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\plikzadresatami.h
 	<vector>
 	<windows.h>
 	<fstream>
@@ -79,14 +79,15 @@
 	"PlikZAdresatami.h"
 	"MetodyPomocnicze.h"
 
-1644918357 source:c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\menadzeradresata.cpp
+1646143164 source:c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\menadzeradresata.cpp
 	"MenadzerAdresata.h"
 
-1644915916 c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\menadzeradresata.h
+1646142217 c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\menadzeradresata.h
 	<iostream>
 	<vector>
 	<windows.h>
 	<fstream>
 	<sstream>
+	"Adresat.h"
 	"PlikZAdresatami.h"
 

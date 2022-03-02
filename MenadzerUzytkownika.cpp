@@ -68,12 +68,7 @@ void MenadzerUzytkownika::wypiszWszystkichUzytkownikow()
     }
 }
 
-void MenadzerUzytkownika::wczytajUzytkownikowZPliku()
-{
-    uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
-}
-
-int MenadzerUzytkownika::logowanieUzytkownika(int idZalogowanegoUzytkownika)
+int MenadzerUzytkownika::logowanieUzytkownika()
 {
     Uzytkownik uzytkownik;
     string login = "", haslo = "";
@@ -108,6 +103,11 @@ int MenadzerUzytkownika::logowanieUzytkownika(int idZalogowanegoUzytkownika)
     return 0;
 }
 
+void MenadzerUzytkownika::wylogowanieUzytkownika()
+{
+    idZalogowanegoUzytkownika = 0;
+}
+
 void MenadzerUzytkownika::zmianaHaslaZalogowanegoUzytkownika()
 {
     string noweHaslo = "";
@@ -131,12 +131,16 @@ void MenadzerUzytkownika::zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik
     plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
 }
 
-int MenadzerUzytkownika::dodajAdresata()
+
+bool MenadzerUzytkownika::czyUzytkownikJestZalogowany()
 {
-    menadzerAdresata.dodajAdresata();
+    if (idZalogowanegoUzytkownika > 0)
+        return true;
+    else
+        return false;
 }
 
-void MenadzerUzytkownika::wyswietlWszystkichAdresatow()
+int MenadzerUzytkownika::pobierzIdZalogowanegoUzytkownika()
 {
-    menadzerAdresata.wyswietlWszystkichAdresatow();
+    return idZalogowanegoUzytkownika;
 }
