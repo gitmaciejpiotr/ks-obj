@@ -8,28 +8,25 @@
 
 #include "Adresat.h"
 #include "MetodyPomocnicze.h"
+#include "PlikTekstowy.h"
 
 
 using namespace std;
 
-class PlikZAdresatami
+class PlikZAdresatami : public PlikZDanymi
 {
     const string NAZWA_PLIKU_Z_ADRESATAMI;
     MetodyPomocnicze metodyPomocnicze;
     int idOstatniegoAdresata;
     fstream plikTekstowy;
 
-    string konwerjsaIntNaString(int liczba);
-    string pobierzLiczbe(string tekst, int pozycjaZnaku);
-    int konwersjaStringNaInt(string liczba);
-    bool czyPlikJestPusty();
     string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
     Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
     int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
 
 public:
 
-    PlikZAdresatami(string nazwaPlikuZAdresatami = "Adresaci.txt") : NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami)
+    PlikZAdresatami(string nazwaPlikuZAdresatami = "Adresaci.txt") : NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami), PlikZDanymi(nazwaPlikuZAdresatami)
     {
         idOstatniegoAdresata = 0;
     };
@@ -38,6 +35,11 @@ public:
     vector <Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
     int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
     int pobierzIdOstatniegoAdresata();
+    void usunWybranaLinieWPliku(Adresat adresat);
+    int zwrocNumerLiniiSzukanegoAdresata(int idAdresata);
+    void usunPlik(string nazwaPlikuZRozszerzeniem);
+    void zmienNazwePliku(string staraNazwa, string nowaNazwa);
+    void edytujDaneAdresataWPliku(string liniaZDanymiAdresataOddzielonePionowymiKreskami, Adresat adresat);
 };
 
 #endif

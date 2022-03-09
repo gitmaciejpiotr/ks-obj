@@ -17,7 +17,6 @@ class MenadzerUzytkownika
 {
     int idZalogowanegoUzytkownika;
     PlikZUzytkownikami plikZUzytkownikami;
-    //MenadzerAdresata menadzerAdresata;
     MetodyPomocnicze metodyPomocnicze;
     vector <Uzytkownik> uzytkownicy;
 
@@ -33,9 +32,8 @@ public:
     int logowanieUzytkownika();
     void wylogowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
-    void zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik> uzytkownicy);
-    int dodajAdresata();
     void wyswietlWszystkichAdresatow();
+    char wybierzOpcjeZMenuUzytkownika();
     MenadzerUzytkownika(int idUzytkownika) : idZalogowanegoUzytkownika(idUzytkownika)
     {
         uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();

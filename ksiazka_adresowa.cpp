@@ -1,4 +1,4 @@
-#include "ks-objectowo.h"
+#include "ksiazka_adresowa.h"
 
 void KsiazkaAdresowa::rejestracjaUzytkownika()
 {
@@ -49,7 +49,51 @@ void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
     menadzerAdresata->wyswietlWszystkichAdresatow();
 }
 
+void KsiazkaAdresowa::wyszukajAdresatowPoImieniu()
+{
+    menadzerAdresata->wyszukajAdresatowPoImieniu();
+}
+
+void KsiazkaAdresowa::wyszukajAdresatowPoNazwisku()
+{
+    menadzerAdresata->wyszukajAdresatowPoNazwisku();
+}
+
+int KsiazkaAdresowa::usunAdresata()
+{
+    menadzerAdresata->usunAdresata();
+}
+
+void KsiazkaAdresowa::edytujAdresata()
+{
+    menadzerAdresata->edytujAdresata();
+}
+
 bool KsiazkaAdresowa::czyUzytkownikJestZalogowany()
 {
     menadzerUzytkownika.czyUzytkownikJestZalogowany();
 }
+
+char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego()
+{
+    MetodyPomocnicze metodyPomocnicze;
+    char wybor;
+
+    system("cls");
+    cout << "    >>> MENU  GLOWNE <<<" << endl;
+    cout << "---------------------------" << endl;
+    cout << "1. Rejestracja" << endl;
+    cout << "2. Logowanie" << endl;
+    cout << "9. Koniec programu" << endl;
+    cout << "---------------------------" << endl;
+    cout << "Twoj wybor: ";
+    wybor = metodyPomocnicze.wczytajZnak();
+
+    return wybor;
+}
+
+char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
+{
+    menadzerUzytkownika.wybierzOpcjeZMenuUzytkownika();
+}
+

@@ -27,11 +27,22 @@ class MenadzerAdresata
 public:
 
     void wyswietlWszystkichAdresatow();
-    void wyswietlDaneAdresata(int i);
+    void wyswietlDaneAdresata(Adresat adresa);
     Adresat podajDaneNowegoAdresata();
     Adresat pobierzDaneAdresata();
     void dodajAdresata();
     int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami();
+    void wyszukajAdresatowPoImieniu();
+    void wyszukajAdresatowPoNazwisku();
+    void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
+    int podajIdWybranegoAdresata();
+    int zwrocNumerLiniiSzukanegoAdresata(int idAdresata);
+    int usunAdresata();
+    void edytujAdresata();
+    char wybierzOpcjeZMenuEdycja();
+    void zaktualizujDaneWybranegoAdresata(Adresat adresat);
+    int znajdzNumerAdresataOPodanymIDWWektorze(int idAdresata);
+    string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
     MenadzerAdresata(int idZalogowanegoUzytkownika = 0) : ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika)
     {
         adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);

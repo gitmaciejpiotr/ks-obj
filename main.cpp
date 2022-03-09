@@ -1,46 +1,8 @@
 #include <iostream>
 
-#include "ks-objectowo.h"
+#include "ksiazka_adresowa.h"
 
 using namespace std;
-
-char wybierzOpcjeZMenuGlownego()
-{
-    char wybor;
-    MetodyPomocnicze metodyPomocnicze;
-
-    system("cls");
-    cout << "    >>> MENU  GLOWNE <<<" << endl;
-    cout << "---------------------------" << endl;
-    cout << "1. Rejestracja" << endl;
-    cout << "2. Logowanie" << endl;
-    cout << "9. Koniec programu" << endl;
-    cout << "---------------------------" << endl;
-    cout << "Twoj wybor: ";
-    wybor = metodyPomocnicze.wczytajZnak();
-
-    return wybor;
-}
-
-char wybierzOpcjeZMenuUzytkownika()
-{
-    char wybor;
-    MetodyPomocnicze metodyPomocnicze;
-
-    system("cls");
-    cout << " >>> MENU UZYTKOWNIKA <<<" << endl;
-    cout << "---------------------------" << endl;
-    cout << "1. Dodaj adresata" << endl;
-    cout << "2. Wyswietl adresatow" << endl;
-    cout << "---------------------------" << endl;
-    cout << "3. Zmien haslo" << endl;
-    cout << "4. Wyloguj sie" << endl;
-    cout << "---------------------------" << endl;
-    cout << "Twoj wybor: ";
-    wybor = metodyPomocnicze.wczytajZnak();
-
-    return wybor;
-}
 
 int main()
 {
@@ -53,7 +15,7 @@ int main()
     {
         if (ksiazkaAdresowa.czyUzytkownikJestZalogowany()==false)
         {
-            wybor = wybierzOpcjeZMenuGlownego();
+            wybor = ksiazkaAdresowa.wybierzOpcjeZMenuGlownego();
 
             switch (wybor)
             {
@@ -74,14 +36,7 @@ int main()
         }
         else
         {
-
-            //if (adresaci.empty() == true)
-                // Pobieramy idOstatniegoAdresata, po to aby zoptymalizowac program.
-                // Dzieki temu, kiedy uztykwonik bedzie dodawal nowego adresata
-                // to nie bedziemy musieli jeszcze raz ustalac idOstatniegoAdresata
-                //idOstatniegoAdresata = wczytajAdresatowZalogowanegoUzytkownikaZPliku(adresaci, idZalogowanegoUzytkownika);
-
-            wybor = wybierzOpcjeZMenuUzytkownika();
+            wybor = ksiazkaAdresowa.wybierzOpcjeZMenuUzytkownika();
 
             switch (wybor)
             {
@@ -89,12 +44,24 @@ int main()
                 ksiazkaAdresowa.dodajAdresata();
                 break;
             case '2':
-                ksiazkaAdresowa.wyswietlWszystkichAdresatow();
+                ksiazkaAdresowa.wyszukajAdresatowPoImieniu();
                 break;
             case '3':
-                ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
+                ksiazkaAdresowa.wyszukajAdresatowPoNazwisku();
                 break;
             case '4':
+                ksiazkaAdresowa.wyswietlWszystkichAdresatow();
+                break;
+            case '5':
+                ksiazkaAdresowa.usunAdresata();
+                break;
+            case '6':
+                ksiazkaAdresowa.edytujAdresata();
+                break;
+            case '7':
+                ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
+                break;
+            case '8':
                 ksiazkaAdresowa.wylogowanieUzytkownika();
                 break;
             }

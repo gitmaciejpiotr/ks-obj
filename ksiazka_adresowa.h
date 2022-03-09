@@ -1,5 +1,5 @@
-#ifndef KS-OBJECTOWO_H
-#define KS-OBJECTOWO_H
+#ifndef KSIAZKA_ADRESOWA_H
+#define KSIAZKA_ADRESOWA_H
 
 #include <iostream>
 
@@ -24,7 +24,12 @@ public:
     void wyswietlWszystkichAdresatow();
     void zmianaHaslaZalogowanegoUzytkownika();
     bool czyUzytkownikJestZalogowany();
-    void zerujIdZalogowanegoUzytkownika();
+    void wyszukajAdresatowPoImieniu();
+    void wyszukajAdresatowPoNazwisku();
+    int usunAdresata();
+    void edytujAdresata();
+    char wybierzOpcjeZMenuGlownego();
+    char wybierzOpcjeZMenuUzytkownika();
     KsiazkaAdresowa(int idZalogowanegoUzytkownika = 0) : menadzerUzytkownika(idZalogowanegoUzytkownika)
     {
         menadzerAdresata = NULL;

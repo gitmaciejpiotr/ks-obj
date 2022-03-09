@@ -2,9 +2,9 @@
 1646217089 source:c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\ks-objectowo.cpp
 	"ks-objectowo.h"
 
-1646217121 source:c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\main.cpp
+1646744564 source:c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\main.cpp
 	<iostream>
-	"ks-objectowo.h"
+	"ksiazka_adresowa.h"
 
 1644937170 source:c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\uzytkownik.cpp
 	"Uzytkownik.h"
@@ -17,7 +17,7 @@
 1643817605 c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\uzytkownik.h
 	<iostream>
 
-1646217089 c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\menadzeruzytkownika.h
+1646667581 c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\menadzeruzytkownika.h
 	<iostream>
 	<vector>
 	<windows.h>
@@ -27,44 +27,46 @@
 	"PlikZUzytkownikami.h"
 	"MetodyPomocnicze.h"
 
-1646149079 source:c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\metodypomocnicze.cpp
+1646401503 source:c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\metodypomocnicze.cpp
 	"MetodyPomocnicze.h"
 
-1646149079 c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\metodypomocnicze.h
+1646401503 c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\metodypomocnicze.h
 	<iostream>
 	<sstream>
 	<bits/stdc++.h>
 
-1645880554 c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\plikzuzytkownikami.h
+1646822595 c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\plikzuzytkownikami.h
 	<vector>
 	<windows.h>
 	<fstream>
 	<cstdlib>
 	"Uzytkownik.h"
 	"MetodyPomocnicze.h"
+	"PlikTekstowy.h"
 
-1645880578 source:c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\plikzuzytkownikami.cpp
+1646667581 source:c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\plikzuzytkownikami.cpp
 	"PlikZUzytkownikami.h"
 
-1646217158 source:c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\menadzeruzytkownika.cpp
+1646666557 source:c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\menadzeruzytkownika.cpp
 	"MenadzerUzytkownika.h"
 
 1644495010 source:c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\adresat.cpp
 	"Adresat.h"
 
-1646146892 c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\adresat.h
+1646218970 c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\adresat.h
 	<iostream>
 
-1646218305 source:c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\plikzadresatami.cpp
+1646765060 source:c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\plikzadresatami.cpp
 	"PlikZAdresatami.h"
 
-1646218640 c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\plikzadresatami.h
+1646822718 c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\plikzadresatami.h
 	<vector>
 	<windows.h>
 	<fstream>
 	<cstdlib>
 	"Adresat.h"
 	"MetodyPomocnicze.h"
+	"PlikTekstowy.h"
 
 1644327096 source:c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\menad¿eradresata.cpp
 	"Menad¿erAdresata.h"
@@ -79,10 +81,10 @@
 	"PlikZAdresatami.h"
 	"MetodyPomocnicze.h"
 
-1646143164 source:c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\menadzeradresata.cpp
+1646765060 source:c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\menadzeradresata.cpp
 	"MenadzerAdresata.h"
 
-1646142217 c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\menadzeradresata.h
+1646746809 c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\menadzeradresata.h
 	<iostream>
 	<vector>
 	<windows.h>
@@ -90,4 +92,21 @@
 	<sstream>
 	"Adresat.h"
 	"PlikZAdresatami.h"
+
+1646660581 source:c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\ksiazka_adresowa.cpp
+	"ksiazka_adresowa.h"
+
+1646660581 c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\ksiazka_adresowa.h
+	<iostream>
+	"MenadzerUzytkownika.h"
+	"MenadzerAdresata.h"
+
+1646822595 c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\pliktekstowy.h
+	<vector>
+	<windows.h>
+	<fstream>
+	<cstdlib>
+
+1646665995 source:c:\users\maciu\onedrive\pulpit\kody\ks-objektowo\pliktekstowy.cpp
+	"PlikTekstowy.h"
 
