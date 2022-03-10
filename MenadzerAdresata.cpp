@@ -181,9 +181,7 @@ int MenadzerAdresata::usunAdresata()
             znak = metodyPomocnicze.wczytajZnak();
             if (znak == 't')
             {
-                //numerLiniiUsuwanegoAdresata = plikZAdresatami.zwrocNumerLiniiSzukanegoAdresata(idUsuwanegoAdresata);
-                plikZAdresatami.usunWybranaLinieWPliku(/*numerLiniiUsuwanegoAdresata*/ adresaci[znajdzNumerAdresataOPodanymIDWWektorze(idUsuwanegoAdresata)]);
-                //plikZAdresatami.usunAdresataZPliku(adresat);
+                plikZAdresatami.usunWybranaLinieWPliku(idUsuwanegoAdresata);
                 adresaci.erase(itr);
                 cout << endl << endl << "Szukany adresat zostal USUNIETY" << endl << endl;
                 system("pause");
@@ -307,9 +305,8 @@ void MenadzerAdresata::zaktualizujDaneWybranegoAdresata(Adresat adresat)
     int numerLiniiEdytowanegoAdresata = 0;
     string liniaZDanymiAdresata = "";
 
-   // numerLiniiEdytowanegoAdresata = plikZAdresatami.zwrocNumerLiniiSzukanegoAdresata(adresat.pobierzID());//jedna funkcja edytujDaneAdresataWPliku()
     liniaZDanymiAdresata = zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(adresat);
-    plikZAdresatami.edytujDaneAdresataWPliku(/*numerLiniiEdytowanegoAdresata, */liniaZDanymiAdresata, adresat);
+    plikZAdresatami.edytujDaneAdresataWPliku(liniaZDanymiAdresata);
 
     cout << endl << "Dane zostaly zaktualizowane." << endl << endl;
 }

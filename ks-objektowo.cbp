@@ -40,10 +40,10 @@
 		<Unit filename="MenadzerUzytkownika.h" />
 		<Unit filename="MetodyPomocnicze.cpp" />
 		<Unit filename="MetodyPomocnicze.h" />
-		<Unit filename="PlikTekstowy.cpp" />
-		<Unit filename="PlikTekstowy.h" />
 		<Unit filename="PlikZAdresatami.cpp" />
 		<Unit filename="PlikZAdresatami.h" />
+		<Unit filename="PlikZDanymi.cpp" />
+		<Unit filename="PlikZDanymi.h" />
 		<Unit filename="PlikZUzytkownikami.cpp" />
 		<Unit filename="PlikZUzytkownikami.h" />
 		<Unit filename="Uzytkownik.cpp" />

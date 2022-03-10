@@ -8,7 +8,7 @@
 
 #include "Adresat.h"
 #include "MetodyPomocnicze.h"
-#include "PlikTekstowy.h"
+#include "PlikZDanymi.h"
 
 
 using namespace std;
@@ -35,11 +35,11 @@ public:
     vector <Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
     int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
     int pobierzIdOstatniegoAdresata();
-    void usunWybranaLinieWPliku(Adresat adresat);
+    void usunWybranaLinieWPliku(int idUsuwanegoAdresata);
     int zwrocNumerLiniiSzukanegoAdresata(int idAdresata);
     void usunPlik(string nazwaPlikuZRozszerzeniem);
     void zmienNazwePliku(string staraNazwa, string nowaNazwa);
-    void edytujDaneAdresataWPliku(string liniaZDanymiAdresataOddzielonePionowymiKreskami, Adresat adresat);
+    void edytujDaneAdresataWPliku(string liniaZDanymiAdresataOddzielonePionowymiKreskami);
 };
 
 #endif

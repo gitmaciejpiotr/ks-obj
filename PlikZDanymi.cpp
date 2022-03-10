@@ -1,4 +1,4 @@
-#include "PlikTekstowy.h"
+#include "PlikZDanymi.h"
 
 bool PlikZDanymi::czyPlikJestPusty()
 {

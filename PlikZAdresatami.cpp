@@ -157,7 +157,7 @@ int PlikZAdresatami::pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(st
     return idUzytkownika;
 }
 
-void PlikZAdresatami::usunWybranaLinieWPliku(Adresat adresat)
+void PlikZAdresatami::usunWybranaLinieWPliku(int idUsuwanegoAdresata)
 {
     fstream odczytywanyPlikTekstowy, tymczasowyPlikTekstowy;
     string wczytanaLinia = "";
@@ -168,12 +168,11 @@ void PlikZAdresatami::usunWybranaLinieWPliku(Adresat adresat)
     odczytywanyPlikTekstowy.open(NAZWA_PLIKU_Z_ADRESATAMI.c_str(), ios::in);
     tymczasowyPlikTekstowy.open(nazwaTymczasowegoPlikuZAdresatami.c_str(), ios::out | ios::app);
 
-    if (odczytywanyPlikTekstowy.good() == true && adresat.pobierzID()  != 0)
+    if (odczytywanyPlikTekstowy.good() == true && idUsuwanegoAdresata != 0)
     {
         while (getline(odczytywanyPlikTekstowy, wczytanaLinia))
         {
-            if (pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia) ==  adresat.pobierzID())
-                continue;
+            if (pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia) ==  idUsuwanegoAdresata + 1){}
             else if (numerWczytanejLinii > 1)
                 tymczasowyPlikTekstowy << liniaBufor << endl;
 
@@ -234,7 +233,7 @@ int PlikZAdresatami::zwrocNumerLiniiSzukanegoAdresata(int idAdresata)
     return 0;
 }
 
-void PlikZAdresatami::edytujDaneAdresataWPliku(string liniaZDanymiAdresataOddzielonePionowymiKreskami, Adresat adresat)
+void PlikZAdresatami::edytujDaneAdresataWPliku(string liniaZDanymiAdresataOddzielonePionowymiKreskami)
 {
     fstream odczytywanyPlikTekstowy, tymczasowyPlikTekstowy;
     string wczytanaLinia = "";
@@ -248,7 +247,7 @@ void PlikZAdresatami::edytujDaneAdresataWPliku(string liniaZDanymiAdresataOddzie
     {
         while (getline(odczytywanyPlikTekstowy, wczytanaLinia))
         {
-            if (pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia) == adresat.pobierzID())
+            if (pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia) == pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(liniaZDanymiAdresataOddzielonePionowymiKreskami))
             {
                 if (numerWczytanejLinii == 1)
                     tymczasowyPlikTekstowy << liniaZDanymiAdresataOddzielonePionowymiKreskami;

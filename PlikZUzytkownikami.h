@@ -8,7 +8,7 @@
 
 #include "Uzytkownik.h"
 #include "MetodyPomocnicze.h"
-#include "PlikTekstowy.h"
+#include "PlikZDanymi.h"
 
 
 using namespace std;
