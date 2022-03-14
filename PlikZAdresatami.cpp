@@ -49,8 +49,8 @@ int PlikZAdresatami::pobierzZPlikuIdOstatniegoAdresata()
     if (plikTekstowy.good() == true)
     {
         while (getline(plikTekstowy, daneJednegoAdresataOddzielonePionowymiKreskami)) {}
-            daneOstaniegoAdresataWPliku = daneJednegoAdresataOddzielonePionowymiKreskami;
-            plikTekstowy.close();
+        daneOstaniegoAdresataWPliku = daneJednegoAdresataOddzielonePionowymiKreskami;
+        plikTekstowy.close();
     }
     else
         cout << "Nie udalo sie otworzyc pliku i wczytac danych." << endl;
@@ -157,11 +157,11 @@ int PlikZAdresatami::pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(st
     return idUzytkownika;
 }
 
-void PlikZAdresatami::usunWybranaLinieWPliku(int idUsuwanegoAdresata)
+void PlikZAdresatami::usunWybranaLinieWPliku(int idUsuwanegoAdresata, int liczbaLinii)
 {
     fstream odczytywanyPlikTekstowy, tymczasowyPlikTekstowy;
     string wczytanaLinia = "";
-    string liniaBufor = "";
+    string ostatniaLiniaWPliku = "";
     string nazwaTymczasowegoPlikuZAdresatami = "Adresaci_tymczasowy";
     int numerWczytanejLinii = 1;
 
@@ -172,22 +172,31 @@ void PlikZAdresatami::usunWybranaLinieWPliku(int idUsuwanegoAdresata)
     {
         while (getline(odczytywanyPlikTekstowy, wczytanaLinia))
         {
-            if (pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia) ==  idUsuwanegoAdresata + 1){}
-            else if (numerWczytanejLinii > 1)
-                tymczasowyPlikTekstowy << liniaBufor << endl;
+            if (pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia) ==  idUsuwanegoAdresata){}
+            else
+            {
+                if (numerWczytanejLinii == 1)
+                    tymczasowyPlikTekstowy << wczytanaLinia;
+                else
+                    tymczasowyPlikTekstowy << endl << wczytanaLinia;
 
-            liniaBufor = wczytanaLinia;
-            numerWczytanejLinii++;
+                ostatniaLiniaWPliku = wczytanaLinia;
+                numerWczytanejLinii++;
+            }
         }
-        tymczasowyPlikTekstowy << wczytanaLinia;
-
-        odczytywanyPlikTekstowy.close();
-        tymczasowyPlikTekstowy.close();
-
-        usunPlik(NAZWA_PLIKU_Z_ADRESATAMI);
-        zmienNazwePliku(nazwaTymczasowegoPlikuZAdresatami, NAZWA_PLIKU_Z_ADRESATAMI);
     }
+
+    odczytywanyPlikTekstowy.close();
+    tymczasowyPlikTekstowy.close();
+
+    usunPlik(NAZWA_PLIKU_Z_ADRESATAMI);
+    zmienNazwePliku(nazwaTymczasowegoPlikuZAdresatami, NAZWA_PLIKU_Z_ADRESATAMI);
+    if (czyPlikJestPusty() == false)
+        idOstatniegoAdresata = pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(ostatniaLiniaWPliku);
+    else
+        idOstatniegoAdresata = 0;
 }
+
 
 void PlikZAdresatami::usunPlik(string nazwaPlikuZRozszerzeniem)
 {
