@@ -1,0 +1,1 @@
+chall3.php?file=../../../etc/flag3
