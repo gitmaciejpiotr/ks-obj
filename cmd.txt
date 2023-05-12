@@ -1,1 +1,1 @@
-/chall3.php?file=../../../etc/flag3
+/chall3.php?file=../../../../etc/flag3
